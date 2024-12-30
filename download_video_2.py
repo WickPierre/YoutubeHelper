@@ -1,9 +1,6 @@
 import os
-
 from pytubefix import YouTube
 from pytubefix.cli import on_progress
-
-url = "https://www.youtube.com/watch?v=XojMhnGkNds"
 
 
 def combine(audio: str, video: str, output: str) -> None:
@@ -18,8 +15,7 @@ def combine(audio: str, video: str, output: str) -> None:
         raise SystemError(code)
 
 
-def download(url: str):
-
+def download(url):
     yt = YouTube(
         proxies={"http": "http://127.0.0.1:8881",
                  "https": "http://127.0.0.1:8881"},
@@ -52,8 +48,4 @@ def download(url: str):
     video_stream.download()
     print('\nDownload audio...')
     audio_stream.download()
-    combine(audio_stream.default_filename, video_stream.default_filename,
-            f'{yt.title}.mp4')
-
-
-download(url)
+    combine(audio_stream.default_filename, video_stream.default_filename, 'output.mp4')
