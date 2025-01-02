@@ -2,7 +2,7 @@ import random
 import asyncio
 
 
-blocked = None
+blocked = open("blacklist.txt", "br").read().split()
 tasks = []
 
 
@@ -78,6 +78,5 @@ async def fragemtn_data(local_reader, remote_writer):
     await remote_writer.drain()
 
 
-if __name__ == "__main__":
-    blocked = open("blacklist.txt", "br").read().split()
-    asyncio.run(main('127.0.0.1', '8881'))
+# if __name__ == "__main__":
+#     asyncio.run(main('127.0.0.1', '8881'))
