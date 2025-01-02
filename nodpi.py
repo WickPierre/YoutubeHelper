@@ -70,4 +70,8 @@ async def new_conn(local_reader, local_writer):
 
 async def main(host, port):
     server = await asyncio.start_server(new_conn, host, port)
+    print(f'Прокси запущено на 127.0.0.1:{port}')
+    print("Не закрывайте окно")
     await server.serve_forever()
+
+# asyncio.run(main(host='127.0.0.1', port=8881))

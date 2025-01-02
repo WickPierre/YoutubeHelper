@@ -1,6 +1,6 @@
 import asyncio
 from multiprocessing.pool import ThreadPool
-from nodpi import main
+from new_nodpi import main
 from download_video_2 import download
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout

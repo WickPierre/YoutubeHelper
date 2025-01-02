@@ -3,3 +3,4 @@
 .idea
 .buildozer
 bin
+buildozer.spec

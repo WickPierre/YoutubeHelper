@@ -45,7 +45,10 @@ def download(url):
         video_stream.filesize / 1000000), "MB")
 
     print('Download video...')
-    video_stream.download()
+    video_stream.download(filename='video', max_retries=10)
     print('\nDownload audio...')
-    audio_stream.download()
-    combine(audio_stream.default_filename, video_stream.default_filename, 'output.mp4')
+    audio_stream.download(filename='audio')
+    combine('audio', 'video', 'output.mp4')
+
+
+# download('https://www.youtube.com/watch?v=FqhY19ETXwc')
